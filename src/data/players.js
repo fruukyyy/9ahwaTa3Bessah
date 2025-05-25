@@ -33,7 +33,7 @@ import tahakr1Image from '../assets/player-images/tahakr1.jpg';
 import hamza1Image from '../assets/player-images/hamza1.jpg';
 import amine2Image from '../assets/player-images/amine2.jpg';
 import anesImage from '../assets/player-images/anes.jpg';
-import anesdjImage from '../assets/player-images/anesDJ.jpg';
+import anesdjImage from '../assets/player-images/anesDj.jpg';
 import hassan1Image from '../assets/player-images/hassan1.jpg';
 import bessah3Image from '../assets/player-images/bessah3.jpg';
 import oussamakoImage from '../assets/player-images/oussamaKo.jpg';

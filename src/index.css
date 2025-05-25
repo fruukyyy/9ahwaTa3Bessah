@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+
+@theme{
+
+
+  --color-primary: #0F172A;       /* Dark navy background */
+  --color-secondary: #1E293B;     /* Slightly lighter for cards */
+  --color-text: #F8FAFC;          /* White text */
+  --color-text-gray: #94A3B8;     /* Secondary text */
+  --color-text-gray1: #64748B; 
+  
+  --color-gold-400:#F59E0B;
+  --color-gold-500:#D97706;
+  --color-gold-300:#FCD34D;
+  
+  --borderColor-default: 'rgba(245, 158, 11, 0.2)';
+
+  --boxShadow-gold-sm:'0 2px 10px rgba(245, 158, 11, 0.3)';
+  --boxShadow-gold-md: '0 4px 15px rgba(245, 158, 11, 0.4)';
+
+  --animation-fade-in: 'fadeIn 0.5 ease-in-out';
+
+  
+  
+  /* Tertiary text */
+  
+  --color-selected: #F59E0B;      /* Golden accent */
+  --color-selected-secondary: #92400E; /* Dark gold bg */
+  --color-button: #1E40AF;        /* Deep blue buttons */
+  
+  --color-contour: #334155;       /* Border color */
+  --color-contour1: #475569; 
+
+  --color-redback-dark:#380713;
+  --color-redback: #8B0836;
+  --color-red-selected: #FF2056;
+  --color-red-title: #FF637E;
+
+
+  --color-golden:#ffe033;
+  --color-750: #2d3748;
+  --font-mont:Montserrat;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}

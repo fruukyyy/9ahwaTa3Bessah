@@ -1,0 +1,28 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import PlayersPage from './pages/PlayersPage';
+import TeamGeneratorPage from './pages/TeamGeneratorPage';
+import MatchHistoryPage from './pages/MatchHistoryPage';
+import PlayerProfilePage from './pages/PlayerProfilePage';
+
+const App = () => {
+  return (
+    <Router>
+      <div className="min-h-screen font-mont bg-primary text-gray-100">
+        <Navbar />
+        <div className="pt-16">
+          <Routes>
+            <Route path="/" element={<PlayersPage />} />
+            <Route path="/players" element={<PlayersPage />} />
+            <Route path="/team-generator" element={<TeamGeneratorPage />} />
+            <Route path="/match-history" element={<MatchHistoryPage />} />
+            <Route path="/player/:id" element={<PlayerProfilePage />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
+  );
+};
+
+export default App;

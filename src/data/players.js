@@ -21,7 +21,7 @@ import khaledImage from '../assets/player-images/khaled.jpg';
 import ali1Image from '../assets/player-images/ali1.jpg';
 import oussamaLmImage from '../assets/player-images/oussamaLmch.JPG';
 import amine1Image from '../assets/player-images/amine1.JPG';
-import walidImage from '../assets/player-images/walid.jpg';
+import walidImage from '../assets/player-images/walid.JPG';
 import asri1Image from '../assets/player-images/asri1.jpg';
 import bessah1Image from '../assets/player-images/bessah1.jpg';
 import aymenImage from '../assets/player-images/aymen.jpg';

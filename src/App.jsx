@@ -5,6 +5,7 @@ import PlayersPage from './pages/PlayersPage';
 import TeamGeneratorPage from './pages/TeamGeneratorPage';
 import MatchHistoryPage from './pages/MatchHistoryPage';
 import PlayerProfilePage from './pages/PlayerProfilePage';
+import PlayerStatsPage from './pages/PlayerStatsPage';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
             <Route path="/team-generator" element={<TeamGeneratorPage />} />
             <Route path="/match-history" element={<MatchHistoryPage />} />
             <Route path="/player/:id" element={<PlayerProfilePage />} />
+            <Route path="/player-stats" element={<PlayerStatsPage />} />
           </Routes>
         </div>
       </div>

@@ -12,10 +12,7 @@ const MatchHistoryPage = () => {
         <MatchHistory matches={matchesList} />
       </div>
       
-      <div>
-        <h2 className="text-2xl font-semibold mb-4">Player Statistics</h2>
-        <PlayerStats />
-      </div>
+      
     </div>
   );
 };

@@ -31,12 +31,7 @@ const Navbar = () => {
             >
               Match History
             </Link>
-            <Link 
-              to="/player-stats" 
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-selected transition-colors"
-            >
-              Player Statistics
-            </Link>
+            
           </div>
         </div>
       </div>

@@ -10,9 +10,9 @@ import PlayerStatsPage from './pages/PlayerStatsPage';
 const App = () => {
   return (
     <Router>
-      <div className="min-h-screen font-mont bg-primary text-gray-100">
+      <div className="min-h-screen font-mont bg-primary text-gray-100 w-full overflow-x-hidden">
         <Navbar />
-        <div className="pt-16">
+        <div className="pt-16 pb-8 px-4 sm:px-6 lg:px-8 w-full">
           <Routes>
             <Route path="/" element={<PlayersPage />} />
             <Route path="/players" element={<PlayersPage />} />

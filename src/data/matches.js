@@ -57,7 +57,7 @@ export const matchesList = [
       score: 0
     },
     teamB: {
-      players: [2, 8, 16, 12, 10, 4, 27],
+      players: [2, 8, 16, 12, 10, 4, 29],
       score: 0
     },
     mvp: 9, // player ID

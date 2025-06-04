@@ -1,12 +1,14 @@
-# React + Vite
+# Football Team Hub ⚽
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A dynamic web application for managing and celebrating your football team's journey. Built with React + Vite and styled with Tailwind CSS, this platform features:
 
-Currently, two official plugins are available:
+- **Player Profiles**: Player cards with detailed stats and ratings
+- **Smart Team Generator**: Balanced team creation (5v5, 6v6, or 7v7) with skill-based matching
+- **Match Archives**: Historical game tracking with MVPs, scores, and locations
+- **Performance Analytics**: Win/loss statistics and player metrics
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Perfect for amateur teams wanting to professionalize their football experience with:
+✅ Mobile-friendly design (including landscape view)  
+✅ Visual stat representations  
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+*"From casual matches to competitive games – organize, analyze, and remember every moment."*

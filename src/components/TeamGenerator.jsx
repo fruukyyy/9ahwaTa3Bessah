@@ -8,6 +8,11 @@ const TeamGenerator = ({ players }) => {
   const [showHelp, setShowHelp] = useState(false);
 
   const togglePlayerSelection = (playerId) => {
+    // Don't allow selection if we've reached the required number
+    if (selectedPlayers.length >= teamSize * 2 && !selectedPlayers.includes(playerId)) {
+      return;
+    }
+    
     setSelectedPlayers(prev => 
       prev.includes(playerId) 
         ? prev.filter(id => id !== playerId) 
@@ -86,11 +91,14 @@ const TeamGenerator = ({ players }) => {
           {[5, 6, 7].map(size => (
             <button
               key={size}
-              onClick={() => setTeamSize(size)}
+              onClick={() => {
+                setTeamSize(size);
+                setGeneratedTeams(null); // Reset teams when changing size
+              }}
               className={`px-5 py-2.5 rounded-lg font-medium transition-all ${
                 teamSize === size 
                   ? 'bg-gold-500 text-primary border-2 border-gold-500 shadow-gold-sm' 
-                  : 'bg-secondary text-text-gray border-2 border-gold-400/30 hover:bg-gold-500/10 hover:border-gold-400/50'
+                  : 'bg-secondary text-text-gray border-2 border-gold-400/30 hover:bg-gold-500/10 hover:border-gold-400/50 cursor-pointer'
               }`}
             >
               {size} vs {size}
@@ -102,32 +110,45 @@ const TeamGenerator = ({ players }) => {
       {/* Player Selection */}
       <div className="mb-8">
         <h3 className="text-xl font-semibold mb-4 text-text-gray">
-          Select Players <span className='text-gold-400 ml-2'>({selectedPlayers.length} selected)</span>
+          Select Players <span className='text-gold-400 ml-2'>({selectedPlayers.length}/{teamSize * 2} selected)</span>
         </h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          {players.map(player => (
-            <div 
-              key={player.id}
-              onClick={() => togglePlayerSelection(player.id)}
-              className={`p-3 rounded-lg cursor-pointer transition-all border-2 ${
-                selectedPlayers.includes(player.id) 
-                  ? 'bg-gold-500/20 border-gold-500 text-text' 
-                  : 'bg-secondary border-gold-400/20 text-text-gray hover:border-gold-400 hover:bg-secondary/80'
-              }`}
-            >
-              <div className="font-medium text-lg truncate">{player.name}</div>
-              <div className="mt-2 flex justify-between items-center">
-                <span className={`text-sm rounded-full px-3 py-1 ${
-                  selectedPlayers.includes(player.id)
-                    ? 'bg-primary text-gold-400'
-                    : 'bg-primary/50 text-text-gray'
-                }`}>
-                  {player.position}
-                </span>
-                <span className="text-gold-400 font-bold">{player.overallRating}</span>
+          {players.map(player => {
+            const isSelected = selectedPlayers.includes(player.id);
+            const isDisabled = selectedPlayers.length >= teamSize * 2 && !isSelected;
+            
+            return (
+              <div 
+                key={player.id}
+                onClick={() => togglePlayerSelection(player.id)}
+                className={`p-3 rounded-lg cursor-pointer transition-all border-2 ${
+                  isSelected
+                    ? 'bg-gold-500/20 border-gold-500 text-text' 
+                    : isDisabled
+                      ? 'bg-secondary/50 border-gold-400/10 text-text-gray/50 cursor-not-allowed'
+                      : 'bg-secondary border-gold-400/20 text-text-gray hover:border-gold-400 hover:bg-secondary/80'
+                }`}
+              >
+                <div className={`font-medium text-lg truncate ${isDisabled ? 'opacity-50' : ''}`}>
+                  {player.name}
+                </div>
+                <div className="mt-2 flex justify-between items-center">
+                  <span className={`text-sm rounded-full px-3 py-1 ${
+                    isSelected
+                      ? 'bg-primary text-gold-400'
+                      : isDisabled
+                        ? 'bg-primary/20 text-text-gray/50'
+                        : 'bg-primary/50 text-text-gray'
+                  }`}>
+                    {player.position}
+                  </span>
+                  <span className={`${isDisabled ? 'text-gold-400/50' : 'text-gold-400'} font-bold`}>
+                    {player.overallRating}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
       
@@ -137,7 +158,7 @@ const TeamGenerator = ({ players }) => {
         disabled={selectedPlayers.length < teamSize * 2}
         className={`w-full py-3.5 rounded-lg font-bold text-lg transition-all ${
           selectedPlayers.length >= teamSize * 2
-            ? 'bg-gold-500 text-primary hover:bg-gold-600 hover:shadow-gold-md active:scale-95'
+            ? 'bg-gold-500 text-primary hover:bg-gold-600 hover:shadow-gold-md active:scale-95 cursor-pointer'
             : 'bg-secondary text-text-gray border-2 border-gold-400/20 cursor-not-allowed'
         }`}
       >
@@ -148,7 +169,7 @@ const TeamGenerator = ({ players }) => {
       {generatedTeams && (
         <div className="mt-10 animate-fade-in">
           <h3 className="text-2xl font-bold mb-6 text-gold-400 text-center">Generated Teams</h3>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 landscape:grid-cols-2 gap-6">
             {/* Team A */}
             <div className="bg-secondary p-5 rounded-lg border-2 border-gold-400/30 shadow-lg">
               <h4 className="font-bold text-xl mb-4 text-center">

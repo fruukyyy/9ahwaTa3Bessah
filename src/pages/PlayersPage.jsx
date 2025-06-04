@@ -13,7 +13,7 @@ const PlayersPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-selected mb-8">Bir el djir United Players</h1>
+      <h1 className="text-3xl font-bold text-selected mb-8">9ahwa Ta3 Bessah Players</h1>
       
       <div className="mb-8  p-4 rounded-lg shadow-md">
         <div className="relative max-w-md">

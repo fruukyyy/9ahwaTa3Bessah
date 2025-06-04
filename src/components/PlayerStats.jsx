@@ -141,7 +141,7 @@ const PlayerStats = () => {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className="flex items-center">
                         <span className="text-gold-400 mr-1">★</span>
-                        <span className="text-gray-300 font-medium">{player.mvps}</span>
+                        <span className="text-gray-300 font-bold">{player.mvps}</span>
                       </span>
                     </td>
                   </tr>

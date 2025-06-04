@@ -41,6 +41,7 @@ import zinai2Image from '../assets/player-images/zinai2.jpg';
 import memchout1Image from '../assets/player-images/memchout1.jpg';
 import walidfutImage from '../assets/player-images/walidfut.jpg';
 import tahakrImage from '../assets/player-images/tahakr.jpg';
+import mehdiImage from '../assets/player-images/mehdi.jpeg';
 
 
 export const playersList = [
@@ -550,6 +551,24 @@ export const playersList = [
   },
   {
     id: 29,
+    name: "Mehdi Sid Lakhder",
+    position: "MID",
+    attack: 82,
+    defense: 80,
+    dribble: 80,
+    stamina: 82,
+    speed: 80,
+    impact: 84,
+    ballControl: 81,
+    passAccuracy: 83,
+    finish: 86,
+    overallRating: 82,
+    birthday: "2002-06-26",
+    image: mehdiImage,
+    bio: "Empty for now."
+  },
+  {
+    id: 99,
     name: "Random",
     position: "Hybrid",
     attack: 99,

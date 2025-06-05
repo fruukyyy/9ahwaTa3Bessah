@@ -1,6 +1,22 @@
 export const matchesList = [
   {
     id: 1,
+    date: "2025-06-05",
+    time: "19:30",
+    location: "AADL-Pépinière",
+    teamA: {
+      players: [1, 3, 9, 29, 99, 99], // player IDs
+      score: 13
+    },
+    teamB: {
+      players: [10, 25, 26, 99, 99, 99],
+      score: 12
+    },
+    mvp: 9, // player ID
+    notes: "Hamza dayf charef ja yatfarej 3lina."
+  },
+  {
+    id: 2,
     date: "2025-06-03",
     time: "21:30",
     location: "CNL",
@@ -16,7 +32,7 @@ export const matchesList = [
     notes: "Crowded game."
   },
   {
-    id: 2,
+    id: 3,
     date: "2025-05-27",
     time: "21:20",
     location: "CNL",
@@ -32,7 +48,7 @@ export const matchesList = [
     notes: "Meoow !"
   },
   {
-    id: 3,
+    id: 4,
     date: "2025-05-20",
     time: "21:20",
     location: "CNL",
@@ -48,7 +64,7 @@ export const matchesList = [
     notes: "Competitive game."
   },
   {
-    id: 4,
+    id: 5,
     date: "2025-05-14",
     time: "21:00",
     location: "CNL",
@@ -64,7 +80,7 @@ export const matchesList = [
     notes: "Intense game."
   },
   {
-    id: 5,
+    id: 6,
     date: "2025-04-29",
     time: "21:00",
     location: "CNL",
@@ -80,7 +96,7 @@ export const matchesList = [
     notes: "Intense game."
   },
   {
-    id: 6,
+    id: 7,
     date: "2025-04-22",
     time: "21:00",
     location: "CNL",
@@ -96,7 +112,7 @@ export const matchesList = [
     notes: "Close game."
   },
   {
-    id: 7,
+    id: 8,
     date: "2025-04-15",
     time: "21:00",
     location: "CNL",

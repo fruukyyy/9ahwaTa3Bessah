@@ -57,7 +57,10 @@ const PlayerStats = () => {
   const playerStats = calculatePlayerStats();
   const sortedPlayers = Object.entries(playerStats)
     .map(([id, stats]) => ({ id: parseInt(id), ...stats }))
-    .filter(player => player.wins > 0 || player.losses > 0 || player.draws > 0) // Filter out players with no participations
+    .filter(player => 
+      (player.wins > 0 || player.losses > 0 || player.draws > 0) && // Filter out players with no participations
+      player.id !== 99 // Exclude player with ID 99
+    )
     .sort((a, b) => (b.wins - b.losses) - (a.wins - a.losses));
   
   return (

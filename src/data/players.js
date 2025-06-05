@@ -455,7 +455,7 @@ export const playersList = [
     passAccuracy: 88,
     finish: 86,
     overallRating: 86,
-    birthday: "1999-05-10",
+    birthday: "1999-11-17",
     image: faresImage,
     bio: "Empty for now."
   },

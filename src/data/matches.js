@@ -1,6 +1,22 @@
 export const matchesList = [
   {
     id: 1,
+    date: "2025-06-17",
+    time: "21:21",
+    location: "CNL",
+    teamA: {
+      players: [1, 5, 6, 7, 9, 15, 16], // player IDs
+      score: 7
+    },
+    teamB: {
+      players: [3, 4, 8, 12, 14, 23, 24],
+      score: 6
+    },
+    mvp: 15, // player ID
+    notes: "The curse is broken."
+  },
+  {
+    id: 2,
     date: "2025-06-10",
     time: "21:15",
     location: "CNL",
@@ -16,7 +32,7 @@ export const matchesList = [
     notes: "La légende Imad BOUGHANMI mal3abch, l'anniversaire ta3ah."
   },
   {
-    id: 2,
+    id: 3,
     date: "2025-06-05",
     time: "19:30",
     location: "AADL-Pépinière",
@@ -32,7 +48,7 @@ export const matchesList = [
     notes: "Hamza dayf charef ja yatfarej 3lina."
   },
   {
-    id: 3,
+    id: 4,
     date: "2025-06-03",
     time: "21:30",
     location: "CNL",
@@ -48,7 +64,7 @@ export const matchesList = [
     notes: "Crowded game."
   },
   {
-    id: 4,
+    id: 5,
     date: "2025-05-27",
     time: "21:20",
     location: "CNL",
@@ -64,7 +80,7 @@ export const matchesList = [
     notes: "Meoow !"
   },
   {
-    id: 5,
+    id: 6,
     date: "2025-05-20",
     time: "21:20",
     location: "CNL",
@@ -80,7 +96,7 @@ export const matchesList = [
     notes: "Competitive game."
   },
   {
-    id: 6,
+    id: 7,
     date: "2025-05-14",
     time: "21:00",
     location: "CNL",
@@ -96,7 +112,7 @@ export const matchesList = [
     notes: "Intense game."
   },
   {
-    id: 7,
+    id: 8,
     date: "2025-04-29",
     time: "21:00",
     location: "CNL",
@@ -112,7 +128,7 @@ export const matchesList = [
     notes: "Intense game."
   },
   {
-    id: 8,
+    id: 9,
     date: "2025-04-22",
     time: "21:00",
     location: "CNL",
@@ -128,7 +144,7 @@ export const matchesList = [
     notes: "Close game."
   },
   {
-    id: 9,
+    id: 10,
     date: "2025-04-15",
     time: "21:00",
     location: "CNL",

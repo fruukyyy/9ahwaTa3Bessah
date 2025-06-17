@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { playersList } from '../data/players';
 import { calculateAge } from '../utils/ageCalculator';
@@ -6,6 +6,8 @@ import { calculateAge } from '../utils/ageCalculator';
 const PlayerProfilePage = () => {
   const { id } = useParams();
   const player = playersList.find(p => p.id === parseInt(id));
+  const [showFullImage, setShowFullImage] = useState(false);
+  const [clickedImagePosition, setClickedImagePosition] = useState({ top: 0, left: 0, width: 0, height: 0 });
 
   if (!player) {
     return <div className="text-text flex justify-center">Player not found</div>;
@@ -22,15 +24,77 @@ const PlayerProfilePage = () => {
     { label: 'Finish', value: player.finish },
   ];
 
+  const handleImageClick = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setClickedImagePosition({
+      top: rect.top,
+      left: rect.left,
+      width: rect.width,
+      height: rect.height
+    });
+    setShowFullImage(true);
+  };
+
+  const handleCloseImage = () => {
+    setShowFullImage(false);
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
+      {/* Full Image Modal */}
+      {showFullImage && (
+        <div 
+          className="fixed inset-0 bg-gray-800/70 z-50 flex items-center justify-center p-4 cursor-pointer backdrop-blur-sm transition-opacity duration-300"
+          onClick={handleCloseImage}
+          style={{ animation: 'fadeIn 0.3s ease-out' }}
+        >
+          <img 
+            src={player.image} 
+            alt={player.name} 
+            className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl transition-all duration-300"
+            style={{
+              animation: 'zoomIn 0.3s ease-out',
+              transformOrigin: `${clickedImagePosition.left + clickedImagePosition.width/2}px ${clickedImagePosition.top + clickedImagePosition.height/2}px`
+            }}
+          />
+        </div>
+      )}
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes zoomIn {
+          from { 
+            transform: scale(${clickedImagePosition.width / window.innerWidth});
+            opacity: 0;
+          }
+          to { 
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+        @keyframes zoomOut {
+          from { 
+            transform: scale(1);
+            opacity: 1;
+          }
+          to { 
+            transform: scale(${clickedImagePosition.width / window.innerWidth});
+            opacity: 0;
+          }
+        }
+      `}</style>
+
       <div className="bg-secondary rounded-lg shadow-lg overflow-hidden border-2 border-gold-400/30">
         <div className="md:flex">
           <div className="md:w-1/3 p-6 flex justify-center">
             <img 
               src={player.image} 
               alt={player.name} 
-              className="w-64 h-64 rounded-full object-cover border-4 border-gold-400"
+              className="w-64 h-64 rounded-full object-cover border-4 border-gold-400 cursor-pointer hover:border-gold-300 transition-transform hover:scale-105 duration-200"
+              onClick={handleImageClick}
             />
           </div>
           <div className="md:w-2/3 p-6">

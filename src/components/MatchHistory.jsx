@@ -123,13 +123,20 @@ const MatchHistory = ({ matches }) => {
                           const player = getPlayerById(playerId);
                           return (
                             <li key={playerId} className="hover:bg-gold-500/10 px-2 py-1 sm:px-3 sm:py-2 rounded">
-                              <Link to={`/player/${playerId}`} className="group">
-                                <span className="text-text font-semibold text-sm sm:text-base">
-                                  {player.name}
-                                </span>
-                                <span className="text-gold-400 ml-2 text-xs sm:text-sm">
-                                  ({player.position} - {player.overallRating})
-                                </span>
+                              <Link to={`/player/${playerId}`} className="group flex items-center">
+                                <img 
+                                  src={player.image} 
+                                  alt={player.name} 
+                                  className="w-8 h-8 rounded-full mr-3 border border-gold-400/50 object-cover"
+                                />
+                                <div>
+                                  <span className="text-text font-semibold text-sm sm:text-base block">
+                                    {player.name}
+                                  </span>
+                                  <span className="text-gold-400 text-xs sm:text-sm">
+                                    {player.position} - {player.overallRating}
+                                  </span>
+                                </div>
                               </Link>
                             </li>
                           );
@@ -166,13 +173,20 @@ const MatchHistory = ({ matches }) => {
                           const player = getPlayerById(playerId);
                           return (
                             <li key={playerId} className="hover:bg-gold-500/10 px-2 py-1 sm:px-3 sm:py-2 rounded">
-                              <Link to={`/player/${playerId}`} className="group">
-                                <span className="text-text font-semibold text-sm sm:text-base">
-                                  {player.name}
-                                </span>
-                                <span className="text-gold-400 ml-2 text-xs sm:text-sm">
-                                  ({player.position} - {player.overallRating})
-                                </span>
+                              <Link to={`/player/${playerId}`} className="group flex items-center">
+                                <img 
+                                  src={player.image} 
+                                  alt={player.name} 
+                                  className="w-8 h-8 rounded-full mr-3 border border-gold-400/50 object-cover"
+                                />
+                                <div>
+                                  <span className="text-text font-semibold text-sm sm:text-base block">
+                                    {player.name}
+                                  </span>
+                                  <span className="text-gold-400 text-xs sm:text-sm">
+                                    {player.position} - {player.overallRating}
+                                  </span>
+                                </div>
                               </Link>
                             </li>
                           );

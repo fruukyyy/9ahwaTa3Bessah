@@ -35,13 +35,13 @@ const PlayerStats = () => {
         teamBScore < teamAScore ? 'loss' : 'draw';
       
       teamAPlayers.forEach(playerId => {
-        if (teamAResult === 'win')  stats[playerId].wins++;
+        if (teamAResult === 'win') stats[playerId].wins++;
         if (teamAResult === 'loss') stats[playerId].losses++;
         if (teamAResult === 'draw') stats[playerId].draws++;
       });
       
       teamBPlayers.forEach(playerId => {
-        if (teamBResult === 'win')  stats[playerId].wins++;
+        if (teamBResult === 'win') stats[playerId].wins++;
         if (teamBResult === 'loss') stats[playerId].losses++;
         if (teamBResult === 'draw') stats[playerId].draws++;
       });
@@ -56,24 +56,22 @@ const PlayerStats = () => {
   
   const playerStats = calculatePlayerStats();
   
-  // Filter and sort players
+  // Filter and sort players according to new requirements
   const sortedPlayers = Object.entries(playerStats)
     .map(([id, stats]) => ({ id: parseInt(id), ...stats }))
     .filter(player => {
       const totalGames = player.wins + player.losses + player.draws;
       return (
-        totalGames > 2 &&           // Only show players with more than 2 games
-        player.id !== 99            // Exclude player with ID 99
+        totalGames > 2 && // Only show players with more than 2 games
+        player.id !== 99 // Exclude player with ID 99
       );
     })
     .sort((a, b) => {
-      // ---------- CHANGED SECTION ----------
-      // Win-rate now includes draws: wins / totalGames
-      const aTotalGames = a.wins + a.losses + a.draws;
-      const bTotalGames = b.wins + b.losses + b.draws;
-      const aWinRate   = aTotalGames > 0 ? a.wins / aTotalGames : 0;
-      const bWinRate   = bTotalGames > 0 ? b.wins / bTotalGames : 0;
-      // -------------------------------------
+      // Calculate win rates excluding draws
+      const aDecisiveGames = a.wins + a.losses;
+      const bDecisiveGames = b.wins + b.losses;
+      const aWinRate = aDecisiveGames > 0 ? a.wins / aDecisiveGames : 0;
+      const bWinRate = bDecisiveGames > 0 ? b.wins / bDecisiveGames : 0;
       
       // First sort by win rate (descending)
       if (aWinRate > bWinRate) return -1;
@@ -122,12 +120,10 @@ const PlayerStats = () => {
             </thead>
             <tbody className="bg-primary divide-y divide-gold-500/10">
               {sortedPlayers.map(player => {
-                // ---------- CHANGED SECTION ----------
-                const totalGames = player.wins + player.losses + player.draws;
-                const winRate = totalGames > 0 
-                  ? (player.wins / totalGames * 100).toFixed(1) 
+                const decisiveGames = player.wins + player.losses;
+                const winRate = decisiveGames > 0 
+                  ? (player.wins / decisiveGames * 100).toFixed(1) 
                   : '0.0';
-                // -------------------------------------
                 
                 return (
                   <tr key={player.id} className="hover:bg-secondary/50 transition-colors">

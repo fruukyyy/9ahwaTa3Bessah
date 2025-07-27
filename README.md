@@ -10,6 +10,5 @@ A dynamic web application for managing and celebrating your football team's jour
 Perfect for amateur teams wanting to professionalize their football experience with:
 ✅ Mobile-friendly design (including landscape view)  
 ✅ Visual stat representations  
-test push
 
 *"From casual matches to competitive games – organize, analyze, and remember every moment."*

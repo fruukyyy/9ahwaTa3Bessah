@@ -332,7 +332,16 @@ const PlayerStats = () => {
                 Losses
               </th>
               <th scope="col" className="px-3 sm:px-6 py-3 text-left text-xs sm:text-sm font-semibold text-gold-400 uppercase tracking-wider">
+                Draws
+              </th>
+              <th scope="col" className="px-3 sm:px-6 py-3 text-left text-xs sm:text-sm font-semibold text-gold-400 uppercase tracking-wider">
                 Win Rate
+              </th>
+              <th scope="col" className="px-3 sm:px-6 py-3 text-left text-xs sm:text-sm font-semibold text-gold-400 uppercase tracking-wider">
+                MVPs
+              </th>
+              <th scope="col" className="px-3 sm:px-6 py-3 text-left text-xs sm:text-sm font-semibold text-gold-400 uppercase tracking-wider">
+                Streak
               </th>
               <th scope="col" className="px-3 sm:px-6 py-3 text-left text-xs sm:text-sm font-semibold text-gold-400 uppercase tracking-wider">
                 Compare
@@ -376,6 +385,9 @@ const PlayerStats = () => {
                   <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-gray-300 font-medium text-sm sm:text-base">
                     {player.losses}
                   </td>
+                  <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-gray-300 font-medium text-sm sm:text-base">
+                    {player.draws}
+                  </td>
                   <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                     <span className={`px-2 py-1 rounded-full text-xs sm:text-sm font-medium ${
                       winRate >= 60 ? 'bg-green-900/30 text-green-400' :
@@ -384,6 +396,23 @@ const PlayerStats = () => {
                     }`}>
                       {winRate}%
                     </span>
+                  </td>
+                  <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
+                    <span className="flex items-center">
+                      <span className="text-gold-400 mr-1">★</span>
+                      <span className="text-gray-300 font-bold text-sm sm:text-base">{player.mvps}</span>
+                    </span>
+                  </td>
+                  <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
+                    {player.streak.count > 0 && (
+                      <span className={`px-2 py-1 rounded-full text-xs sm:text-sm font-medium ${
+                        player.streak.type === 'win' ? 'bg-green-900/30 text-green-400' :
+                        player.streak.type === 'loss' ? 'bg-red-900/30 text-red-400' :
+                        'bg-yellow-900/30 text-yellow-400'
+                      }`}>
+                        {player.streak.count} {player.streak.type}
+                      </span>
+                    )}
                   </td>
                   <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                     <button

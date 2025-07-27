@@ -74,7 +74,7 @@ const TeamGenerator = ({ players }) => {
             </p>
             <p className="flex items-center">
               <span className="w-6 h-6 bg-gold-500 rounded-full flex items-center justify-center text-primary font-bold mr-2">2</span>
-              Choose team size (5v5, 6v6, or 7v7)
+              Choose team size (5v5, 6v6, 7v7, or 8v8)
             </p>
             <p className="flex items-center">
               <span className="w-6 h-6 bg-gold-500 rounded-full flex items-center justify-center text-primary font-bold mr-2">3</span>
@@ -88,7 +88,7 @@ const TeamGenerator = ({ players }) => {
       <div className="mb-8">
         <label className="block mb-3 font-medium text-text-gray text-lg">Team Size:</label>
         <div className="flex space-x-4">
-          {[5, 6, 7].map(size => (
+          {[5, 6, 7, 8].map(size => (
             <button
               key={size}
               onClick={() => {

@@ -177,7 +177,7 @@ const MatchHistory = ({ matches }) => {
           <img 
             src={rivalry.player1.image} 
             alt={rivalry.player1.name} 
-            className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gold-400 mb-1 group-hover:border-gold-300 transition-colors"
+            className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gold-400 mb-1 group-hover:border-gold-300 transition-colors object-cover"
           />
           <span className="text-base sm:text-lg font-medium text-gold-400 group-hover:text-gold-300 transition-colors text-center">
             {rivalry.player1.name}
@@ -206,7 +206,7 @@ const MatchHistory = ({ matches }) => {
           <img 
             src={rivalry.player2.image} 
             alt={rivalry.player2.name} 
-            className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gold-400 mb-1 group-hover:border-gold-300 transition-colors"
+            className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gold-400 mb-1 group-hover:border-gold-300 transition-colors object-cover"
           />
           <span className="text-base sm:text-lg font-medium text-gold-400 group-hover:text-gold-300 transition-colors text-center">
             {rivalry.player2.name}

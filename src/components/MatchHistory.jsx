@@ -222,21 +222,7 @@ const MatchHistory = ({ matches }) => {
           <span className="font-medium"> {rivalry.headToHead.draws}</span> draws
         </div>
 
-        {/* View Matches Button */}
-        {rivalry.headToHead.matches.length > 0 && (
-          <button
-            onClick={() => {
-              setExpandedMatches(rivalry.headToHead.matches.map(m => m.id));
-              setTimeout(() => {
-                const firstMatch = document.getElementById(`match-${rivalry.headToHead.matches[0].id}`);
-                firstMatch?.scrollIntoView({ behavior: 'smooth' });
-              }, 100);
-            }}
-            className="mt-2 sm:mt-3 bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 px-3 py-1 rounded-lg text-xs sm:text-sm transition-colors"
-          >
-            View All Their Matches
-          </button>
-        )}
+        
       </div>
     </div>
   );

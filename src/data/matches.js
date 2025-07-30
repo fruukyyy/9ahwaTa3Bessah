@@ -1,5 +1,21 @@
 export const matchesList = [
   {
+    id: 17,
+    date: "2025-07-29",
+    time: "21:30",
+    location: "CNL",
+    teamA: {
+      players: [1, 4, 7, 9, 16, 15,23],
+      score: 4
+    },
+    teamB: {
+      players: [2, 3, 5, 8, 12, 14,24],
+      score: 4
+    },
+    mvp: 5,
+    notes: "Intense game, w Zaki ratta 3 face à face solo khassarhoum lgame."
+  },
+  {
     id: 16,
     date: "2025-04-15",
     time: "21:00",

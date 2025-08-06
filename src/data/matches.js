@@ -1,5 +1,21 @@
 export const matchesList = [
   {
+    id: 18,
+    date: "2025-08-05",
+    time: "21:45",
+    location: "CNL",
+    teamA: {
+      players: [1, 2, 3, 5, 14, 9],
+      score: 7
+    },
+    teamB: {
+      players: [4, 7, 8, 13, 15, 16,18],
+      score: 6
+    },
+    mvp: 2,
+    notes: "Team 1 la3bou b joueur na9ess w ga3 haka rabhou."
+  },
+  {
     id: 17,
     date: "2025-07-29",
     time: "21:30",

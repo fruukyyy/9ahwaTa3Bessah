@@ -119,6 +119,7 @@ const PlayerStats = () => {
       return (
         totalGames > 2 && // Only show players with more than 2 games
         player.id !== 99 && // Exclude player with ID 99
+        player.id !== 25 &&
         (positionFilter === 'all' || player.position === positionFilter) && // Position filter
         player.name.toLowerCase().includes(searchQuery.toLowerCase()) // Search filter
       );

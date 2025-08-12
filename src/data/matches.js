@@ -1,5 +1,21 @@
 export const matchesList = [
   {
+    id: 19,
+    date: "2025-08-12",
+    time: "21:45",
+    location: "CNL",
+    teamA: {
+      players: [1, 4, 7, 25, 13, 16],
+      score: 7
+    },
+    teamB: {
+      players: [2, 3, 5, 10, 14, 15],
+      score: 6
+    },
+    mvp: 1,
+    notes: "Taha L3ab f blast fawzi wahd 30mins w lmoment li khraj score kan 5-3 ( taha khaser )."
+  },
+  {
     id: 18,
     date: "2025-08-05",
     time: "21:45",

@@ -42,6 +42,8 @@ import memchout1Image from '../assets/player-images/memchout1.jpg';
 import walidfutImage from '../assets/player-images/walidfut.jpg';
 import tahakrImage from '../assets/player-images/tahakr.jpg';
 import mehdiImage from '../assets/player-images/mehdi.jpeg';
+import abdennourbna1image from '../assets/player-images/abdennourbna1.jpg';
+import mahmoudiImage from '../assets/player-images/mahmoudi.jpg';
 
 
 export const playersList = [
@@ -168,7 +170,7 @@ export const playersList = [
     finish: 86,
     overallRating: 85,
     birthday: "1998-08-24",
-    image: abdennourImage,
+    image: abdennourbna1image,
     bio: "Empty for now."
   },
   {
@@ -312,7 +314,7 @@ export const playersList = [
     finish: 80,
     overallRating: 85,
     birthday: "2008-04-20",
-    image: questionImage,
+    image: mahmoudiImage,
     bio: "Empty for now."
   },
   {

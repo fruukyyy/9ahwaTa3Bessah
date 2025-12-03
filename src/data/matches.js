@@ -1,5 +1,21 @@
 export const matchesList = [
   {
+    id: 35,
+    date: "2025-12-02",
+    time: "21:00",
+    location: "CNL",
+    teamA: {
+      players: [1, 31, 8, 9, 15, ],
+      score: 9
+    },
+    teamB: {
+      players: [3, 4, 10, 12, 5, 16],
+      score: 8
+    },
+    mvp: 9,
+    notes: "Abdennour Bna got sick and he left, teamB had to play with 5 players to balance it out, and amine had a magnificent performance."
+  },
+  {
     id: 34,
     date: "2025-11-25",
     time: "21:30",

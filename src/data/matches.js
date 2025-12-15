@@ -1,35 +1,19 @@
 export const matchesList = [
   {
-    id: 37,
-    date: "2025-12-06",
-    time: "TEST 2",
-    location: "TEST 2",
-    teamA: {
-      players: [1, 2, 3, 4, 5, 6 ],
-      score: 8
-    },
-    teamB: {
-      players: [7, 8, 9, 10, 11, 12],
-      score: 8
-    },
-    mvp: 9,
-    notes: "TEST"
-  },
-  {
     id: 36,
-    date: "2025-12-05",
-    time: "TEST 1",
-    location: "TEST 1",
+    date: "2025-12-09",
+    time: "21:16",
+    location: "CNL",
     teamA: {
-      players: [1, 2, 3, 4, 5, 6 ],
-      score: 8
+      players: [1, 5, 7, 8, 16, 23 ],
+      score: 12
     },
     teamB: {
-      players: [7, 8, 9, 10, 11, 12],
-      score: 8
+      players: [3, 10, 13, 18, 25, 31],
+      score: 11
     },
-    mvp: 9,
-    notes: "TEST"
+    mvp: 1,
+    notes: ""
   },
   {
     id: 35,
